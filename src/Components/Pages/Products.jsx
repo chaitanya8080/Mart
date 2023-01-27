@@ -7,7 +7,7 @@ import {
   Select,
   Flex,
   Button,
-  useToast,
+  
 } from "@chakra-ui/react";
 import axios from "axios";
 import { AiOutlineHeart,AiFillHeart } from "react-icons/ai";
@@ -23,7 +23,7 @@ function Products() {
   const [sort, setSort] = useState("");
   const [filter, setFilter] = useState("");
   const [color, setColor] = useState(true);
-  const toast = useToast();
+
   const [wishlist, setWishlist] = useState(
     JSON.parse(localStorage.getItem("wishlist")) || []
   );
@@ -61,12 +61,7 @@ function Products() {
   const handleWishlist = ({product,i}) => {
     setColor(!color)
     setWishlist([...wishlist, product]);
-    toast({
-      title: "Added to wishlist.",
-      status: "success",
-      duration: 1500,
-      isClosable: true,
-    });
+    alert('Added to wishlist')
   };
 
     useEffect(() => {

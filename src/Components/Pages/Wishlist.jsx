@@ -1,9 +1,9 @@
-import { Box, Text, Image, Grid, Center, useToast } from "@chakra-ui/react";
+import { Box, Text, Image, Grid, Center,  } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { AiFillDelete } from "react-icons/ai";
 
 function Wishlist() {
-  const toast = useToast();
+
   const [wishlist, setWishlist] = useState(
     JSON.parse(localStorage.getItem("wishlist")) || []
   );
@@ -14,12 +14,7 @@ function Wishlist() {
 
   const handleDelete = (i) => {
     setWishlist(wishlist.filter((el, index) => index !== i));
-    toast({
-      title: 'Deleted succefully',
-      status: 'success',
-      duration: 1500,
-      isClosable: true,
-    })
+    alert('removed from wishlist')
   };
 
   return (
